@@ -48,7 +48,7 @@ export default function Home({
 }: HomeProps): ReactElement {
   function getReadTime(item: Post): number {
     const totalWords = item.data.content.reduce((total, contentItem) => {
-      total += contentItem.heading.split(' ').length;
+      total += contentItem.heading?.split(' ').length;
 
       const words = contentItem.body.map(i => i.text.split(' ').length);
       words.map(word => (total += word));

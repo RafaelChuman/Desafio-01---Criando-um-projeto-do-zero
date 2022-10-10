@@ -65,7 +65,7 @@ export default function Post({
   }
 
   const totalWords = post.data.content.reduce((total, contentItem) => {
-    total += contentItem.heading.split(' ').length;
+    total += contentItem.heading?.split(' ').length;
 
     const words = contentItem.body.map(item => item.text.split(' ').length);
     words.map(word => (total += word));
